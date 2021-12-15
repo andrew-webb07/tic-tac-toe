@@ -1,0 +1,11 @@
+import React from "react";
+
+export const TicTacToe = () => (
+<>
+    <>
+        <h1>Tic Tac Toe!!! Hi Ethan and Riley!</h1>
+        <h2>Let's play Tic-Tac-Toe!</h2>
+    </>
+        
+</>
+)
