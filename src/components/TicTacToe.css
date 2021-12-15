@@ -1,0 +1,18 @@
+.gridContainer {
+    display:flex;
+}
+
+/* .rowContainer {
+    display: flex;
+    justify-self: space-evenly;
+} */
+
+.row {
+    border: black solid .2em;
+    padding:2em;
+}
+
+.box {
+    border: black solid .2em;
+    padding:2em;
+}
