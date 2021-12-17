@@ -1,4 +1,4 @@
-import React from "react";
+
 import { TicTacToeGrid } from "./TicTacToeGrid";
 
 export const TicTacToe = () => (

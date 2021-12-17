@@ -1,6 +1,13 @@
-import React from "react"
-// import React, { useState } from "react"
-import"./TicTacToe.css"
+import React from "react";
+import {Square} from "./Square.js";
+
+export const Board = ({ squares, onClick }) => (
+  <div className="board">
+    {squares.map((square, i) => (
+      <Square key={i} value={square} onClick={() => onClick(i)} />
+    ))}
+  </div>
+);
 
 export const TicTacToeGrid = () => {
     // const [currentPlayer, setCurrentPlayer] = {
@@ -26,7 +33,7 @@ export const TicTacToeGrid = () => {
         <>
             <div className="gridContainer">
                 <div className="rowContainer">
-                    <div className="row" id="rowOne" onClick={() => setBox(id)}>{boxSelected ? {playerOne ? "" : ""} : ""}</div>
+                    <div className="row" id="rowOne"></div>
                     <div className="row" id="rowTwo"></div>
                     <div className="row" id="rowThree"></div>
                 </div>
