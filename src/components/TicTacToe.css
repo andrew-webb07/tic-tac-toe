@@ -1,18 +1,75 @@
-.gridContainer {
-    display:flex;
-}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
 
-/* .rowContainer {
+  .buttons:hover {
+      background-color: grey;
+  }
+  
+  body {
+    background-color: #184dc3;
+    color: white;
+    font-family: "Roboto", sans-serif;
     display: flex;
-    justify-self: space-evenly;
-} */
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+  }
+  
+  h1 {
+    margin: 2rem;
+  }
+  
+  .board {
+    background: #ffffff;
+    width: 40em;
+    height: 40em;
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    /* grid-gap: .5rem; */
+  }
+  
+  .squares {
+    background: white;
+    border: black solid .05em;
+    font-size: 5rem;
+    /* font-weight: 800; */
+    cursor: pointer;
+    outline: none;
+  }
 
-.row {
-    border: black solid .2em;
-    padding:2em;
-}
-
-.box {
-    border: black solid .2em;
-    padding:2em;
-}
+  .squares:hover {
+      background-color: grey;
+  }
+  
+  .X {
+    color: black;
+  }
+  .O {
+    color: black;
+  }
+  
+  .info-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  h3 {
+    padding: 1rem;
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  .info-wrapper button {
+    background: #272727;
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    margin: 0.5rem 1rem;
+  }
