@@ -44,13 +44,6 @@
       background-color: grey;
   }
   
-  .X {
-    color: black;
-  }
-  .O {
-    color: black;
-  }
-  
   .info-wrapper {
     display: flex;
     justify-content: space-between;

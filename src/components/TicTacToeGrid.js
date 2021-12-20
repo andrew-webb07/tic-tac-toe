@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import {Square} from "./Square.js";
 import "./TicTacToe.css"
 
 export const TicTacToeGrid = () => {
@@ -35,8 +34,6 @@ export const TicTacToeGrid = () => {
     const winner = calculateWinner(choicesArray)
     const xO = xIsNext ? "X" : "O";
 
-    
-
     const handleClick = (i) => {
         // create a copy of current choices Array
         const squares = [...choicesArray]
@@ -52,19 +49,12 @@ export const TicTacToeGrid = () => {
         setXisNext(!xIsNext);
       };
 
-    const Board = ({ squares, onClick }) => (
-        <div className="board">
-          {squares.map((square, i) => (
-            <Square key={i} value={square} onClick={() => onClick(i)} />
-          ))}
-        </div>
-      );  
-
     return (
         <>
-        <Board squares={choicesArray} onClick={handleClick} />
-
-        {winner ? <><h1>Winner is {winner}!!!!</h1> <button>play again</button></> : <h1>Next Player: {xO}</h1>}
+            <div className="board">
+                {choicesArray.map((square, i) => {return (<button className='squares' onClick={() => handleClick(i)}>{square}</button>)})}
+            </div>
+            {winner ? <><h1>Winner is {winner}!!!!</h1> <button>play again</button></> : <h1>Next Player: {xO}</h1>}
         </>
     )
 }
