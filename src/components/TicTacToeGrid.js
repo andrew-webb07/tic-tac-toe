@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import {Square} from "./Square.js";
+import "./TicTacToe.css"
 
 export const TicTacToeGrid = () => {
 
@@ -57,8 +58,7 @@ export const TicTacToeGrid = () => {
             <Square key={i} value={square} onClick={() => onClick(i)} />
           ))}
         </div>
-      );
-    const [ x , setX ] = ""    
+      );  
 
     return (
         <>
