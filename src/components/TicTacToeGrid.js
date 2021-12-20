@@ -28,27 +28,27 @@ export const TicTacToeGrid = () => {
         return null;
       }
 
-    // create array of 9 items with all null values
-    const [history, setHistory] = useState([Array(9).fill(null)]);
+    // create array of 9 items initially with null values
+    const [choicesArray, setChoicesArray] = useState(Array(9).fill(null))
 
-    const [stepNumber, setStepNumber] = useState(0);
     const [xIsNext, setXisNext] = useState(true);
-    const winner = calculateWinner(history[stepNumber]);
+    const winner = calculateWinner(choicesArray)
     const xO = xIsNext ? "X" : "O";
 
     
 
     const handleClick = (i) => {
-        const historyPoint = history.slice(0, stepNumber + 1);
-        const current = historyPoint[stepNumber];
-        const squares = [...current];
-        // return if won or occupied
+        // create a copy of current choices Array
+        const squares = [...choicesArray]
+
+        // return if there is a winner or return X or O for current selected square
         if (winner || squares[i]) return;
-        // select square
+
+        // put X or O into squares array at correct square
         squares[i] = xO;
-        setHistory([...historyPoint, squares]);
-        setStepNumber(historyPoint.length);
-        // Alternates true and false for x is next or not, o is next
+        setChoicesArray(squares)
+
+        // Alternates true and false for whether square should have X or O
         setXisNext(!xIsNext);
       };
 
@@ -62,8 +62,9 @@ export const TicTacToeGrid = () => {
 
     return (
         <>
-        <Board squares={history[stepNumber]} onClick={handleClick} />
+        <Board squares={choicesArray} onClick={handleClick} />
 
+        {winner ? <><h1>Winner is {winner}!!!!</h1> <button>play again</button></> : <h1>Next Player: {xO}</h1>}
         </>
     )
 }
