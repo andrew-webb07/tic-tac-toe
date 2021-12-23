@@ -33,6 +33,7 @@ export const TicTacToeGrid = () => {
     const [xIsNext, setXisNext] = useState(true);
     const winner = calculateWinner(choicesArray)
     const xO = xIsNext ? "X" : "O";
+    let counter = 0
 
     const handleClick = (i) => {
         // create a copy of current choices Array
@@ -49,12 +50,18 @@ export const TicTacToeGrid = () => {
         setXisNext(!xIsNext);
       };
 
+      for (const choice of choicesArray) {
+        if (choice === "X" || choice === "O") {
+          counter++
+        }
+      }
+
     return (
         <>
             <div className="board">
                 {choicesArray.map((square, i) => (<button className='squares' onClick={() => handleClick(i)}>{square}</button>))}
             </div>
-            {winner ? <><h1>Winner is {winner}!!!!</h1> <div className="restartButtonWrapper"><button onClick={() => window.location.reload(false)} className="restartButton">Play Again??</button></div></> : <h1>Next Player: {xO}</h1>}
+            {winner ? <><h1>Winner is {winner}!!!!</h1> <div className="restartButtonWrapper"><button onClick={() => window.location.reload(false)} className="restartButton">Play Again??</button></div></> : counter === 9 ? <><h1>Cats game!</h1><div className="restartButtonWrapper"><button onClick={() => window.location.reload(false)} className="restartButton">Play Again??</button></div> </>: <h1>Next Player: {xO}</h1>}
         </>
     )
 }
