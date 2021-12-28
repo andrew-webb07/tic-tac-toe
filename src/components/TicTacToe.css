@@ -87,3 +87,24 @@
     display: flex;
     justify-content: center;
   }
+
+  .winnnerSquares {
+    color: white;
+    background-color: #184dc3;
+    border: .05em black dotted;
+    box-shadow: 0em 0em 1em 8px #272727;
+    font-size: 8rem;
+    animation-name: spin;
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+  }
+
+  @keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
