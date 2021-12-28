@@ -63,6 +63,7 @@ export const TicTacToeGrid = () => {
     console.log(choicesArray)
     return (
         <>
+          <div className="gameContainer">
             <div className="board">
                 {choicesArray.map((square, i) => (
                   <>
@@ -70,7 +71,11 @@ export const TicTacToeGrid = () => {
                   </>
                   ))}
             </div>
-            {winner ? <><h1>Winner is {winner}!!!!</h1> <div className="restartButtonWrapper"><button onClick={() => window.location.reload(false)} className="restartButton">Play Again??</button></div></> : counter === 9 ? <><h1>Cats game!</h1><div className="restartButtonWrapper"><button onClick={() => window.location.reload(false)} className="restartButton">Play Again??</button></div> </>: <h1>Next Player: {xO}</h1>}
+
+            <div className="sideContainer">
+              {winner ? <><h1 className="winnerTitle">Winner is {winner}!!!!</h1> <div className="restartButtonWrapper"><button onClick={() => window.location.reload(false)} className="restartButton">Play Again??</button></div></> : counter === 9 ? <><h1>Cats game!</h1><div className="restartButtonWrapper"><button onClick={() => window.location.reload(false)} className="restartButton">Play Again??</button></div> </>: <h1>Next Player: {xO}</h1>}
+            </div>
+          </div>
         </>
     )
 }
